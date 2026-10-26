@@ -1,0 +1,144 @@
+{
+  "id": "vampi-tv",
+  "name": "Vampi TV",
+  "version": "0.1.0",
+  "apiVersion": 9,
+  "entry": "plugin.js",
+  "description": "Canales de TV en vivo desde listas M3U, agrupados por categorías: trae una lista pública lista para usar y acepta las tuyas, con guía opcional.",
+  "author": "xuper-plugin",
+  "homepage": "https://github.com/xuper-plugin/kino-plugin-vampi-tv",
+  "hosts": [
+    "raw.githubusercontent.com"
+  ],
+  "capabilities": [
+    "home",
+    "resolve",
+    "channels"
+  ],
+  "liveStreamHosts": "any",
+  "categories": [
+    "live"
+  ],
+  "color": "#FF6B8B",
+  "theme": {
+    "accent": "#FF6B8B",
+    "onAccent": "#2A0612",
+    "background": "#0B060D",
+    "surface": "#1A0F1E",
+    "highlight": "#FFC2D0"
+  },
+  "telemetry": true,
+  "settings": [
+    {
+      "key": "listasSeccion",
+      "type": "section",
+      "label": "Listas",
+      "labelEn": "Lists",
+      "hint": "Kino lee cada lista M3U y agrupa los canales por categorías.",
+      "hintEn": "Kino reads each M3U list and groups the channels by category."
+    },
+    {
+      "key": "useDefault",
+      "type": "toggle",
+      "default": true,
+      "label": "Usar la lista incluida",
+      "labelEn": "Use the included list",
+      "hint": "Lista pública «Argentina» (nicor1029). Apágala para usar solo las tuyas.",
+      "hintEn": "The public “Argentina” list (nicor1029). Turn it off to use only yours."
+    },
+    {
+      "key": "lists",
+      "type": "list",
+      "max": 5,
+      "label": "Tus listas M3U",
+      "labelEn": "Your M3U lists",
+      "hint": "Direcciones de listas M3U que ya tengas.",
+      "hintEn": "Addresses of M3U lists you already have.",
+      "fields": [
+        {
+          "key": "url",
+          "label": "Lista (M3U)",
+          "type": "url",
+          "required": true,
+          "hint": "https://ejemplo.org/lista.m3u",
+          "labelEn": "M3U list",
+          "hintEn": "https://example.org/list.m3u"
+        },
+        {
+          "key": "epg",
+          "label": "Guía XMLTV (opcional)",
+          "type": "url",
+          "hint": "https://ejemplo.org/guia.xml",
+          "labelEn": "XMLTV guide (optional)",
+          "hintEn": "https://example.org/guide.xml"
+        }
+      ]
+    },
+    {
+      "key": "refresh",
+      "type": "select",
+      "default": "6",
+      "label": "Actualizar las listas",
+      "labelEn": "Refresh the lists",
+      "options": [
+        {
+          "value": "3",
+          "label": "Cada 3 horas",
+          "labelEn": "Every 3 hours"
+        },
+        {
+          "value": "6",
+          "label": "Cada 6 horas",
+          "labelEn": "Every 6 hours"
+        },
+        {
+          "value": "12",
+          "label": "Cada 12 horas",
+          "labelEn": "Every 12 hours"
+        },
+        {
+          "value": "24",
+          "label": "Cada día",
+          "labelEn": "Every day"
+        }
+      ],
+      "hint": "Las listas públicas cambian varias veces al día.",
+      "hintEn": "Public lists change several times a day."
+    },
+    {
+      "key": "hide",
+      "type": "text",
+      "label": "Grupos que ocultar",
+      "labelEn": "Groups to hide",
+      "hint": "Nombres separados por coma, por ejemplo: Radio, Música",
+      "hintEn": "Names separated by commas, for example: Radio, Music"
+    },
+    {
+      "key": "userAgent",
+      "type": "text",
+      "label": "User-Agent de los canales",
+      "labelEn": "Channels' User-Agent",
+      "hint": "Solo si tus canales lo piden. Ej.: VLC/3.0.20 LibVLC/3.0.20",
+      "hintEn": "Only if your channels need it. E.g.: VLC/3.0.20 LibVLC/3.0.20"
+    },
+    {
+      "key": "estadoSeccion",
+      "type": "section",
+      "label": "Estado",
+      "labelEn": "Status"
+    },
+    {
+      "key": "estado",
+      "type": "status",
+      "label": "Listas",
+      "labelEn": "Lists"
+    },
+    {
+      "key": "probar",
+      "type": "action",
+      "label": "Comprobar las listas",
+      "labelEn": "Check the lists"
+    }
+  ],
+  "icon": "icon.png"
+}
